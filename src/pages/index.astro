@@ -1,6 +1,5 @@
 ﻿---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="IA Forense | Início">
@@ -9,16 +8,50 @@ const baseUrl = import.meta.env.BASE_URL;
       <div>
         <span class="tag">Versão MVP</span>
         <h1>Inteligência artificial aplicada à prática forense</h1>
-        <p class="meta"><strong>IA Forense por Rodrigo Pereira Martins Ribeiro</strong> · <a href="/sobre/#curriculo-autor">Currículo do autor</a></p>
+        <p class="meta"><strong>IA Forense por <em>Rodrigo Pereira Martins Ribeiro</em></strong> · <a href="/sobre/#curriculo-autor">Currículo e contato</a></p>
         <p>
-          Este site nasce para ensinar aplicação prática de IA no dia a dia jurídico, com foco em produtividade,
-          qualidade técnica e responsabilidade no uso no âmbito do Direito e do Processo Civil.
+          Aplicação prática de IA no dia a dia jurídico, com foco em produtividade, qualidade crítica e uso
+          no âmbito do Direito e do Processo Civil.
         </p>
+        <p class="meta">Ferramentas de IA para escrita jurídica e agentes.</p>
         <a href="/ia-forense/" class="cta">Explorar IA Forense</a>
         <a href="/processo-civil/" class="cta alt">Ver Processo Civil</a>
       </div>
-      <div class="hero-visual">
-        <img src={`${baseUrl}legal-tech-hero.svg`} alt="Ilustração de balança da justiça integrada a circuitos tecnológicos" />
+      <div class="hero-visual" aria-label="Ilustração jurídica e tecnológica">
+        <svg viewBox="0 0 900 620" role="img" aria-label="Balança da justiça integrada com elementos tecnológicos" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bg" x1="0" y1="0" x2="900" y2="620" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#F4F9FF"/>
+              <stop offset="1" stop-color="#E8F1FC"/>
+            </linearGradient>
+            <linearGradient id="blue" x1="180" y1="115" x2="720" y2="520" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#1E87EF"/>
+              <stop offset="1" stop-color="#0A4B9B"/>
+            </linearGradient>
+            <linearGradient id="gold" x1="270" y1="260" x2="625" y2="495" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#D5A451"/>
+              <stop offset="1" stop-color="#B27B2A"/>
+            </linearGradient>
+          </defs>
+          <rect width="900" height="620" rx="28" fill="url(#bg)"/>
+          <g opacity="0.35" stroke="#9AB8DB" stroke-width="2">
+            <path d="M70 115H240V285"/>
+            <circle cx="70" cy="115" r="6" fill="#9AB8DB"/>
+            <circle cx="240" cy="285" r="6" fill="#9AB8DB"/>
+            <path d="M830 115H660V285"/>
+            <circle cx="830" cy="115" r="6" fill="#9AB8DB"/>
+            <circle cx="660" cy="285" r="6" fill="#9AB8DB"/>
+          </g>
+          <rect x="370" y="170" width="160" height="265" rx="18" fill="url(#blue)"/>
+          <rect x="355" y="145" width="190" height="38" rx="10" fill="#1A6FC5"/>
+          <rect x="325" y="430" width="250" height="28" rx="10" fill="#D2E2F5"/>
+          <rect x="285" y="460" width="330" height="24" rx="8" fill="#C1D4EC"/>
+          <rect x="235" y="490" width="430" height="20" rx="7" fill="#AFC5E2"/>
+          <rect x="210" y="250" width="140" height="16" rx="8" fill="#1A6FC5"/>
+          <rect x="550" y="250" width="140" height="16" rx="8" fill="#1A6FC5"/>
+          <path d="M280 266L222 350H338L280 266Z" fill="url(#gold)"/>
+          <path d="M620 266L562 350H678L620 266Z" fill="url(#gold)"/>
+        </svg>
       </div>
     </div>
   </section>
@@ -37,7 +70,7 @@ const baseUrl = import.meta.env.BASE_URL;
         <a href="/processo-civil/">Entrar</a>
       </article>
       <article class="card">
-        <h3>Opinião (Em construção)</h3>
+        <h3>Análise Autoral (Em construção)</h3>
         <p>Análises autorais sobre tendências, riscos e limites da IA no Direito.</p>
         <a href="/opiniao/">Entrar</a>
       </article>
