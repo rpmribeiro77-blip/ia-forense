@@ -2,29 +2,68 @@
 import fs from "node:fs";
 import path from "node:path";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { parseVocabBlock, type VocabEntry } from "../../lib/vocab";
 
-const raw = fs.readFileSync(
-  path.join(process.cwd(), "public", "vocabulario-textos", "vocabulario-completo.txt"),
+const raw1 = fs.readFileSync(
+  path.join(process.cwd(), "public", "vocabulario-textos", "bloco-1.txt"),
   "utf-8"
 );
-const lines = raw.split(/\r?\n/);
-const body = (lines.length > 1 ? lines.slice(1) : lines).join("\n");
+const raw2 = fs.readFileSync(
+  path.join(process.cwd(), "public", "vocabulario-textos", "bloco-2.txt"),
+  "utf-8"
+);
+const raw3 = fs.readFileSync(
+  path.join(process.cwd(), "public", "vocabulario-textos", "bloco-3.txt"),
+  "utf-8"
+);
+
+const map = new Map<string, VocabEntry>();
+for (const entry of [...parseVocabBlock(raw1, 2), ...parseVocabBlock(raw2, 2), ...parseVocabBlock(raw3, 2)]) {
+  if (!map.has(entry.term)) map.set(entry.term, entry);
+}
+const entries = Array.from(map.values()).sort((a, b) => a.term.localeCompare(b.term, "pt-BR"));
 ---
 
 <BaseLayout title="Vocabulário Tecnológico — Completo">
   <span class="tag">Consolidado</span>
   <h1>Vocabulário Tecnológico — Completo</h1>
-  <pre class="vocab-text">{body}</pre>
+  <p class="meta">
+    Reunião dos termos dos três blocos em ordem alfabética, com separação por termo e subitens
+    para facilitar consulta rápida na prática forense.
+  </p>
+  <div class="entries">
+    {
+      entries.map((entry) => (
+        <article class="entry">
+          <h2>{entry.term}</h2>
+          {entry.fields.map((field) => (
+            <p>
+              <strong>{field.label}:</strong> {field.value}
+            </p>
+          ))}
+        </article>
+      ))
+    }
+  </div>
 </BaseLayout>
 
 <style>
-  .vocab-text {
-    white-space: pre-wrap;
-    line-height: 1.58;
-    font-family: "IBM Plex Serif", Georgia, serif;
-    background: #f7fbff;
+  .entries {
+    display: grid;
+    gap: 0.9rem;
+  }
+  .entry {
     border: 1px solid #bfd3e8;
     border-radius: 12px;
+    background: #f7fbff;
     padding: 1rem;
+  }
+  .entry h2 {
+    margin: 0 0 0.55rem;
+    font-size: 1.18rem;
+  }
+  .entry p {
+    margin: 0.32rem 0;
+    line-height: 1.58;
   }
 </style>

@@ -2,29 +2,55 @@
 import fs from "node:fs";
 import path from "node:path";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { parseVocabBlock } from "../../lib/vocab";
 
 const raw = fs.readFileSync(
   path.join(process.cwd(), "public", "vocabulario-textos", "bloco-1.txt"),
   "utf-8"
 );
-const lines = raw.split(/\r?\n/);
-const body = (lines.length > 2 ? lines.slice(2) : lines).join("\n");
+const entries = parseVocabBlock(raw, 2);
 ---
 
 <BaseLayout title="Vocabulário Tecnológico — Bloco 1">
   <span class="tag">Bloco 1</span>
   <h1>Vocabulário Tecnológico — Bloco 1</h1>
-  <pre class="vocab-text">{body}</pre>
+  <p class="meta">
+    Este bloco apresenta fundamentos, limites e critérios de controle do uso de IA na escrita jurídica,
+    com foco em confiabilidade, precisão e responsabilidade profissional.
+  </p>
+  <div class="entries">
+    {
+      entries.map((entry) => (
+        <article class="entry">
+          <h2>{entry.term}</h2>
+          {entry.fields.map((field) => (
+            <p>
+              <strong>{field.label}:</strong> {field.value}
+            </p>
+          ))}
+        </article>
+      ))
+    }
+  </div>
 </BaseLayout>
 
 <style>
-  .vocab-text {
-    white-space: pre-wrap;
-    line-height: 1.58;
-    font-family: "IBM Plex Serif", Georgia, serif;
-    background: #f7fbff;
+  .entries {
+    display: grid;
+    gap: 0.9rem;
+  }
+  .entry {
     border: 1px solid #bfd3e8;
     border-radius: 12px;
+    background: #f7fbff;
     padding: 1rem;
+  }
+  .entry h2 {
+    margin: 0 0 0.55rem;
+    font-size: 1.18rem;
+  }
+  .entry p {
+    margin: 0.32rem 0;
+    line-height: 1.58;
   }
 </style>
