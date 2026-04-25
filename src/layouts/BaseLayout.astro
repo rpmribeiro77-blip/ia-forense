@@ -28,15 +28,15 @@ const linkTo = (path = "") => `${rootPath}${path.replace(/^\/+/, "")}`;
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;500;600&display=swap");
       :root {
-        --bg: #dceee4;
-        --surface: #f5fff8;
-        --surface-soft: #e0f2e8;
-        --text: #153323;
-        --muted: #3e6650;
-        --brand: #16864a;
-        --brand-strong: #0d5f35;
-        --accent: #8aa63a;
-        --border: #b9d8c5;
+        --bg: #d9e4f1;
+        --surface: #f5f9ff;
+        --surface-soft: #e2ecf9;
+        --text: #132238;
+        --muted: #415770;
+        --brand: #0d6fd8;
+        --brand-strong: #0a4b9b;
+        --accent: #c28a2d;
+        --border: #c2d4e8;
       }
       * { box-sizing: border-box; }
       body {
@@ -44,9 +44,9 @@ const linkTo = (path = "") => `${rootPath}${path.replace(/^\/+/, "")}`;
         color: var(--text);
         font-family: "Space Grotesk", "Segoe UI", Tahoma, sans-serif;
         background:
-          radial-gradient(circle at 8% 3%, #cce8d7 0, transparent 30%),
-          radial-gradient(circle at 90% 92%, #c8e2d1 0, transparent 34%),
-          linear-gradient(150deg, #e1f1e7, #d3eadc);
+          radial-gradient(circle at 8% 3%, #cfdff2 0, transparent 30%),
+          radial-gradient(circle at 90% 92%, #cedcf0 0, transparent 34%),
+          linear-gradient(150deg, #e0e9f5, #d5e1ef);
       }
       body::before {
         content: "";
@@ -55,8 +55,8 @@ const linkTo = (path = "") => `${rootPath}${path.replace(/^\/+/, "")}`;
         pointer-events: none;
         opacity: 0.14;
         background-image:
-          linear-gradient(to right, #78b78f2b 1px, transparent 1px),
-          linear-gradient(to bottom, #78b78f2b 1px, transparent 1px);
+          linear-gradient(to right, #7da4cf2b 1px, transparent 1px),
+          linear-gradient(to bottom, #7da4cf2b 1px, transparent 1px);
         background-size: 30px 30px;
       }
       a { color: var(--brand-strong); }
@@ -68,7 +68,7 @@ const linkTo = (path = "") => `${rootPath}${path.replace(/^\/+/, "")}`;
         top: 0;
         z-index: 20;
         backdrop-filter: blur(8px);
-        background: #e5f4e9df;
+        background: #e6eef8df;
         border-bottom: 1px solid var(--border);
       }
       .topbar {
@@ -94,28 +94,28 @@ const linkTo = (path = "") => `${rootPath}${path.replace(/^\/+/, "")}`;
         border-radius: 2px;
         margin-right: 0.5rem;
         background: linear-gradient(45deg, var(--brand), var(--accent));
-        box-shadow: 0 0 12px #16864a44;
+        box-shadow: 0 0 12px #0d6fd844;
       }
       nav { display: flex; flex-wrap: wrap; gap: 0.65rem; }
       nav a {
         text-decoration: none;
         font-size: 0.92rem;
-        color: #245b38;
+        color: #24496f;
         padding: 0.35rem 0.62rem;
         border-radius: 999px;
         border: 1px solid transparent;
       }
       nav a:hover {
-        border-color: #a8d6b9;
-        background: #e8f8ed;
+        border-color: #aecded;
+        background: #eaf3ff;
       }
       main { padding: 1.5rem 0 2.2rem; }
       :global(.hero) {
         border: 1px solid var(--border);
-        background: linear-gradient(145deg, #f5fff8, #dff2e7 58%, #edf8f1);
+        background: linear-gradient(145deg, #f5f9ff, #e0ebf9 58%, #edf4fd);
         border-radius: 18px;
         padding: 1.55rem;
-        box-shadow: 0 14px 30px #5d8f6e19;
+        box-shadow: 0 14px 30px #5d7ea619;
       }
       :global(.hero-split) {
         display: grid;
@@ -130,9 +130,9 @@ const linkTo = (path = "") => `${rootPath}${path.replace(/^\/+/, "")}`;
         max-height: 290px;
         height: auto;
         display: block;
-        border: 1px solid #add6bb;
+        border: 1px solid #b7cbe4;
         border-radius: 12px;
-        background: #f4fff7;
+        background: #f4f9ff;
         margin: 0 auto;
       }
       :global(.hero-visual .hero-illustration) {
@@ -149,15 +149,15 @@ const linkTo = (path = "") => `${rootPath}${path.replace(/^\/+/, "")}`;
         border: 1px solid var(--border);
         border-radius: 14px;
         padding: 1rem;
-        background: linear-gradient(180deg, #f8fffa, #e6f4eb);
-        box-shadow: 0 8px 16px #6e9b7d14;
+        background: linear-gradient(180deg, #f8fbff, #e7f0fb);
+        box-shadow: 0 8px 16px #6e8eb314;
       }
       :global(.card h3) { margin-bottom: 0.4rem; }
       :global(.tag) {
         display: inline-block;
-        background: #e2f7e9;
-        color: #0d5f35;
-        border: 1px solid #b6dfc3;
+        background: #e5f2ff;
+        color: #0a4b9b;
+        border: 1px solid #bed8f7;
         border-radius: 999px;
         font-size: 0.78rem;
         padding: 0.2rem 0.62rem;
@@ -174,7 +174,7 @@ const linkTo = (path = "") => `${rootPath}${path.replace(/^\/+/, "")}`;
       :global(.cta) {
         display: inline-block;
         margin-top: 0.6rem;
-        background: linear-gradient(120deg, #16864a, #22a862);
+        background: linear-gradient(120deg, #0d6fd8, #1e87ef);
         color: #ffffff;
         font-weight: 700;
         text-decoration: none;
@@ -182,7 +182,7 @@ const linkTo = (path = "") => `${rootPath}${path.replace(/^\/+/, "")}`;
         border-radius: 10px;
       }
       :global(.cta.alt) {
-        background: linear-gradient(120deg, #718f2d, #9bb545);
+        background: linear-gradient(120deg, #b07a24, #c79238);
         color: #ffffff;
       }
       @media (max-width: 900px) {
