@@ -26,171 +26,323 @@ const linkTo = (path = "") => `${rootPath}${path.replace(/^\/+/, "")}`;
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;500;600&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Serif:wght@400;500;600&display=swap");
       :root {
-        --bg: #d9e4f1;
-        --surface: #f5f9ff;
-        --surface-soft: #e2ecf9;
-        --text: #132238;
-        --muted: #415770;
-        --brand: #0d6fd8;
-        --brand-strong: #0a4b9b;
-        --accent: #c28a2d;
-        --border: #c2d4e8;
+        --bg: #0d1a2b;
+        --surface: #13223a;
+        --surface-soft: #182a43;
+        --surface-ink: #f8fafc;
+        --text: #f8fafc;
+        --muted: #d0deee;
+        --brand: #55cde9;
+        --brand-strong: #d6f6ff;
+        --accent: #55cde9;
+        --accent-violet: #9275f8;
+        --border: rgba(255, 255, 255, 0.14);
+        --border-strong: rgba(178, 196, 218, 0.46);
+        --shadow: 0 24px 70px rgba(0, 0, 0, 0.26);
+        --shadow-soft: 0 14px 34px rgba(0, 0, 0, 0.17);
       }
       * { box-sizing: border-box; }
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         margin: 0;
         color: var(--text);
-        font-family: "Space Grotesk", "Segoe UI", Tahoma, sans-serif;
+        font-family: "Inter", "Segoe UI", Tahoma, sans-serif;
         background:
-          radial-gradient(circle at 8% 3%, #cfdff2 0, transparent 30%),
-          radial-gradient(circle at 90% 92%, #cedcf0 0, transparent 34%),
-          linear-gradient(150deg, #e0e9f5, #d5e1ef);
+          radial-gradient(circle at 86% 2%, rgba(101, 199, 231, 0.42) 0, transparent 34%),
+          radial-gradient(circle at 52% 34%, rgba(64, 103, 145, 0.24) 0, transparent 38%),
+          radial-gradient(circle at 12% -8%, rgba(29, 76, 122, 0.56) 0, transparent 31%),
+          radial-gradient(circle at 79% 58%, rgba(146, 117, 248, 0.12) 0, transparent 31%),
+          linear-gradient(135deg, #0a1322 0%, #13263b 42%, #20334b 68%, #142238 100%);
+        min-height: 100vh;
+        overflow-x: hidden;
       }
       body::before {
         content: "";
         position: fixed;
         inset: 0;
         pointer-events: none;
-        opacity: 0.14;
+        opacity: 0.16;
         background-image:
-          linear-gradient(to right, #7da4cf2b 1px, transparent 1px),
-          linear-gradient(to bottom, #7da4cf2b 1px, transparent 1px);
-        background-size: 30px 30px;
+          linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+        background-size: 40px 40px;
+        mask-image: linear-gradient(180deg, #000 0%, transparent 70%);
       }
-      a { color: var(--brand-strong); }
+      a {
+        color: var(--brand-strong);
+        text-underline-offset: 0.18em;
+        transition: color 160ms ease, border-color 160ms ease, background 160ms ease, transform 160ms ease;
+      }
       a:visited { color: var(--brand-strong); }
-      p, li { font-family: "IBM Plex Serif", Georgia, serif; }
-      .container { width: min(1120px, 92vw); margin: 0 auto; }
+      a:hover { color: #ffffff; }
+      p, li {
+        font-family: "Inter", "Segoe UI", Tahoma, sans-serif;
+        line-height: 1.6;
+      }
+      .container { width: min(1240px, 94vw); margin: 0 auto; }
       header {
         position: sticky;
         top: 0;
         z-index: 20;
-        backdrop-filter: blur(8px);
-        background: #e6eef8df;
+        backdrop-filter: blur(20px);
+        background: rgba(10, 19, 34, 0.72);
         border-bottom: 1px solid var(--border);
+        box-shadow: 0 1px 0 rgba(255,255,255,0.07) inset, 0 10px 26px rgba(0,0,0,0.14);
       }
       .topbar {
         display: flex;
-        gap: 1rem;
+        gap: 1.35rem;
         justify-content: space-between;
         align-items: center;
-        padding: 0.9rem 0;
+        padding: 0.56rem 0;
       }
       .brand {
         text-decoration: none;
         color: var(--text);
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        font-size: 1.55rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        font-size: 1.16rem;
         display: inline-flex;
         align-items: center;
+        white-space: nowrap;
       }
       .brand::before {
         content: "";
-        width: 10px;
-        height: 10px;
-        border-radius: 2px;
-        margin-right: 0.5rem;
-        background: linear-gradient(45deg, var(--brand), var(--accent));
-        box-shadow: 0 0 12px #0d6fd844;
+        width: 0.62rem;
+        height: 1.18rem;
+        border-radius: 999px;
+        margin-right: 0.62rem;
+        background: linear-gradient(180deg, var(--accent), var(--accent-violet));
+        box-shadow: 0 0 0 4px rgba(71,197,232,0.13), 0 0 24px rgba(71,197,232,0.28);
       }
-      nav { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+      nav { display: flex; flex-wrap: wrap; gap: 0.36rem; justify-content: flex-end; }
       nav a {
         text-decoration: none;
-        font-size: 0.92rem;
-        color: #24496f;
-        padding: 0.35rem 0.62rem;
+        font-size: 0.72rem;
+        font-weight: 650;
+        color: #dbe8f7;
+        padding: 0.3rem 0.46rem;
         border-radius: 999px;
-        border: 1px solid transparent;
+        border: 1px solid rgba(255,255,255,0.06);
+        background: rgba(255,255,255,0.025);
       }
       nav a:hover {
-        border-color: #aecded;
-        background: #eaf3ff;
+        border-color: rgba(85,205,233,0.46);
+        background: rgba(85,205,233,0.1);
+        transform: translateY(-1px);
       }
-      main { padding: 1.5rem 0 2.2rem; }
+      main { padding: 0.68rem 0 2.4rem; }
       :global(.hero) {
-        border: 1px solid var(--border);
-        background: linear-gradient(145deg, #f5f9ff, #e0ebf9 58%, #edf4fd);
-        border-radius: 18px;
-        padding: 1.55rem;
-        box-shadow: 0 14px 30px #5d7ea619;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.16);
+        background:
+          radial-gradient(circle at 84% 8%, rgba(85,205,233,0.32) 0, transparent 36%),
+          radial-gradient(circle at 50% 52%, rgba(70,106,148,0.16) 0, transparent 42%),
+          radial-gradient(circle at 18% 2%, rgba(146,117,248,0.14) 0, transparent 30%),
+          linear-gradient(135deg, rgba(23,39,61,0.9) 0%, rgba(18,32,52,0.84) 50%, rgba(12,24,42,0.9) 100%);
+        border-radius: 22px;
+        padding: clamp(1rem, 2vw, 1.55rem);
+        box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,0.08);
+      }
+      :global(.hero::before) {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(90deg, rgba(85,205,233,0.09) 1px, transparent 1px),
+          linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px);
+        background-size: 38px 38px;
+        mask-image: radial-gradient(circle at 86% 28%, #000 0, transparent 48%);
+      }
+      :global(.hero > *) {
+        position: relative;
       }
       :global(.hero-split) {
         display: grid;
-        gap: 1.2rem;
-        grid-template-columns: 1.45fr 280px;
+        gap: clamp(1rem, 2.2vw, 1.9rem);
+        grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
         align-items: center;
       }
       :global(.hero-visual img),
       :global(.hero-visual svg) {
         width: 100%;
-        max-width: 430px;
-        max-height: 290px;
+        max-width: 440px;
+        max-height: 320px;
         height: auto;
         display: block;
-        border: 1px solid #b7cbe4;
-        border-radius: 12px;
-        background: #f4f9ff;
+        border: 1px solid rgba(190, 211, 232, 0.26);
+        border-radius: 18px;
+        background: #0b1524;
         margin: 0 auto;
+        box-shadow: var(--shadow-soft);
       }
       :global(.hero-visual .hero-illustration) {
-        width: 360px;
+        width: 440px;
         height: auto;
         max-width: 100%;
       }
       :global(.grid) {
         display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 0.7rem;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       }
       :global(.card) {
         border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: 1rem;
-        background: linear-gradient(180deg, #f8fbff, #e7f0fb);
-        box-shadow: 0 8px 16px #6e8eb314;
+        border-radius: 15px;
+        padding: 0.9rem;
+        background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.052));
+        backdrop-filter: blur(14px);
+        box-shadow: var(--shadow-soft);
+        transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
       }
-      :global(.card h3) { margin-bottom: 0.4rem; }
+      :global(.card:hover) {
+        transform: translateY(-2px);
+        border-color: var(--border-strong);
+        box-shadow: 0 18px 34px #10233d17;
+      }
+      :global(.card h2),
+      :global(.card h3) { margin-bottom: 0.45rem; }
+      :global(.card p:last-child) { margin-bottom: 0; }
       :global(.tag) {
         display: inline-block;
-        background: #e5f2ff;
-        color: #0a4b9b;
-        border: 1px solid #bed8f7;
+        background: rgba(85, 205, 233, 0.12);
+        color: #bae6fd;
+        border: 1px solid rgba(85, 205, 233, 0.26);
         border-radius: 999px;
-        font-size: 0.78rem;
-        padding: 0.2rem 0.62rem;
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        padding: 0.18rem 0.5rem;
         margin-right: 0.4rem;
       }
-      :global(.meta) { color: var(--muted); font-size: 0.92rem; }
+      :global(.meta) { color: var(--muted); font-size: 0.88rem; }
       footer {
         border-top: 1px solid var(--border);
         color: var(--muted);
-        padding: 1rem 0 2rem;
+        padding: 1.3rem 0 2.2rem;
         font-size: 0.9rem;
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.035), transparent 1px),
+          rgba(10, 19, 34, 0.62);
       }
-      h1, h2, h3 { margin-top: 0.2rem; line-height: 1.2; }
+      .footer-inner {
+        display: flex;
+        gap: 0.45rem;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 14px;
+        padding: 0.8rem 0.95rem;
+        background: rgba(255,255,255,0.035);
+      }
+      .footer-inner strong {
+        color: #f8fafc;
+        letter-spacing: -0.02em;
+      }
+      .footer-inner span {
+        color: #bfd0e4;
+        text-align: right;
+      }
+      h1, h2, h3 {
+        margin-top: 0.2rem;
+        line-height: 1.14;
+        letter-spacing: -0.035em;
+      }
+      h1 {
+        font-size: clamp(2.25rem, 4vw, 4.05rem);
+        max-width: 15ch;
+      }
+      h2 {
+        font-size: clamp(1.15rem, 1.8vw, 1.65rem);
+        margin-top: 1rem;
+      }
+      h3 {
+        font-size: 1rem;
+      }
+      main > :global(h1:first-child) {
+        max-width: 900px;
+        font-size: clamp(1.85rem, 3.4vw, 3.1rem);
+        margin-bottom: 0.7rem;
+      }
+      main > :global(p.meta:first-of-type) {
+        max-width: 760px;
+      }
+      main :global(ul),
+      main :global(ol) {
+        padding-left: 1.35rem;
+      }
+      main :global(li + li) {
+        margin-top: 0.35rem;
+      }
+      main :global(article:not(.card)) {
+        max-width: 860px;
+      }
+      main :global(article:not(.card) p),
+      main :global(.card p),
+      main > :global(p) {
+        color: #d7e2ef;
+      }
+      main :global(article:not(.card) h2) {
+        border-top: 1px solid var(--border);
+        padding-top: 1.15rem;
+      }
       :global(.cta) {
         display: inline-block;
         margin-top: 0.6rem;
-        background: linear-gradient(120deg, #0d6fd8, #1e87ef);
+        background: linear-gradient(120deg, var(--brand-strong), var(--brand));
         color: #ffffff;
         font-weight: 700;
         text-decoration: none;
-        padding: 0.55rem 0.9rem;
-        border-radius: 10px;
+        padding: 0.54rem 0.84rem;
+        border-radius: 999px;
+        box-shadow: 0 12px 22px #123b7328;
       }
       :global(.cta.alt) {
-        background: linear-gradient(120deg, #b07a24, #c79238);
+        background: linear-gradient(120deg, #0f6d82, var(--accent));
         color: #ffffff;
       }
       @media (max-width: 900px) {
         :global(.hero-split) { grid-template-columns: 1fr; }
+        :global(.hero-visual) { display: none; }
+        h1 { max-width: 14ch; }
       }
       @media (max-width: 780px) {
         .topbar { align-items: flex-start; flex-direction: column; }
-        nav { gap: 0.45rem; }
+        nav {
+          gap: 0.35rem;
+          overflow-x: auto;
+          flex-wrap: nowrap;
+          width: 100%;
+          justify-content: flex-start;
+          padding-bottom: 0.18rem;
+        }
+        nav a {
+          flex: 0 0 auto;
+          font-size: 0.76rem;
+          padding: 0.36rem 0.52rem;
+        }
+        main { padding-top: 1.15rem; }
+        :global(.hero) { border-radius: 20px; }
+        .footer-inner {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+        .footer-inner span {
+          text-align: left;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
       }
     </style>
   </head>
@@ -199,11 +351,13 @@ const linkTo = (path = "") => `${rootPath}${path.replace(/^\/+/, "")}`;
       <div class="container topbar">
         <a href={linkTo()} class="brand">IA Forense</a>
         <nav>
+          <a href={linkTo("comece-por-aqui/")}>Comece por aqui</a>
           <a href={linkTo("ia-forense/")}>IA Forense</a>
-          <a href={linkTo("processo-civil/")}>Processo Civil</a>
-          <a href={linkTo("opiniao/")}>Reflexões</a>
+          <a href={linkTo("escrita-juridica/")}>Escrita Jurídica</a>
+          <a href={linkTo("laboratorio-forense/")}>Laboratório Forense</a>
+          <a href={linkTo("vocabulario/")}>Vocabulário</a>
           <a href={linkTo("biblioteca/")}>Biblioteca</a>
-          <a href={linkTo("sobre/#curriculo-autor")}>Currículo e contato</a>
+          <a href={linkTo("reflexoes/")}>Reflexões</a>
           <a href={linkTo("sobre/")}>Sobre</a>
         </nav>
       </div>
@@ -212,8 +366,9 @@ const linkTo = (path = "") => `${rootPath}${path.replace(/^\/+/, "")}`;
       <slot />
     </main>
     <footer>
-      <div class="container">
-        <strong>IA Forense</strong> · Direito, tecnologia e método para prática forense contemporânea.
+      <div class="container footer-inner">
+        <strong>IA Forense</strong>
+        <span>Direito, tecnologia e método para prática forense contemporânea.</span>
       </div>
     </footer>
   </body>

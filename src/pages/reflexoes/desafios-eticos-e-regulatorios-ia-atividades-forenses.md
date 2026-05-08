@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: "Desafios éticos e regulatórios no uso da inteligência artificial nas atividades forenses"
-description: "Reflexões sobre limites, responsabilidade e governança no uso de IA na prática forense."
+description: "Reflex?es sobre limites, responsabilidade e governan?a no uso de IA na pr?tica forense."
 ---
 
 <span class="tag">Artigo de opinião</span>
@@ -24,7 +24,7 @@ Também convém evitar uma visão assimétrica do problema. Seria incoerente exi
 
 Em síntese, o desafio não está em repelir a inteligência artificial, mas em enquadrá-la corretamente no interior das atividades forenses. A advocacia, a magistratura e os demais agentes do sistema de justiça podem se beneficiar dessas ferramentas, e provavelmente continuarão a fazê-lo de forma crescente. Esse aproveitamento, porém, só será legítimo se permanecer subordinado a balizas nítidas: revisão humana efetiva, verificação rigorosa do conteúdo produzido, preservação do sigilo, transparência no uso quando juridicamente exigível e plena assunção de responsabilidade pelo trabalho final. Fora disso, a promessa de eficiência pode converter-se em fator de desordem técnica e de desgaste ético. No ambiente forense, em suma, a tecnologia pode auxiliar o trabalho; não pode assumir o dever profissional de responder, com exatidão e seriedade, pelo que é levado ao processo.
 
-## Referências
+Referências
 
 - BRASIL. Lei nº 13.709, de 14 de agosto de 2018. Lei Geral de Proteção de Dados Pessoais (LGPD). Texto compilado. Brasília, DF: Presidência da República. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709compilado.htm
 - BRASIL. Câmara dos Deputados. Projeto de Lei nº 2.338, de 2023. Dispõe sobre o uso da Inteligência Artificial. Proposição originária do Senado Federal, em tramitação na Câmara dos Deputados. Brasília, DF: Câmara dos Deputados. Disponível em: https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2487262

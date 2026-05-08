@@ -1,144 +1,290 @@
-﻿---
+---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="IA Forense | Início">
   <section class="hero">
     <div class="hero-split">
-      <div>
+      <div class="hero-copy">
         <span class="tag">Versão MVP</span>
         <h1>Inteligência artificial aplicada à prática forense</h1>
-        <p class="meta"><strong>IA Forense por <em>Rodrigo Pereira Martins Ribeiro</em></strong> · <a href="sobre/#curriculo-autor">Currículo e contato</a></p>
-        <p>
-          Aplicação prática de IA no dia a dia jurídico, com foco em produtividade, qualidade crítica e uso
-          no âmbito do Direito e do Processo Civil.
+        <p class="author-line">
+          <strong>Por Rodrigo Pereira Martins Ribeiro</strong>
+          <a href="sobre/#curriculo-autor">Currículo</a>
+          <a href="sobre/#contato">Contato</a>
         </p>
-        <p class="meta">Ferramentas de IA para escrita jurídica e agentes.</p>
-        <div class="feature-grid">
-          <article class="card feature-card">
-            <span class="tag">Destaque</span>
-            <h3>Como usar este site</h3>
-            <p class="meta">Guia rápido para navegação e melhor aproveitamento.</p>
-            <a href="sobre/">Abrir</a>
-          </article>
-          <article class="card feature-card">
-            <span class="tag">Destaque</span>
-            <h3>Vocabulário tecnológico</h3>
-            <p class="meta">Termos tecnológicos aplicados à prática forense.</p>
-            <a href="vocabulario/">Abrir</a>
-          </article>
-          <article class="card feature-card">
-            <span class="tag">Destaque</span>
-            <h3>Todos os vídeos</h3>
-            <p class="meta">Acesso direto aos vídeos da biblioteca.</p>
-            <a href="biblioteca/#videos">Abrir</a>
-          </article>
+        <p class="lead">
+          Aplicação prática de IA no dia a dia jurídico, com foco em produtividade, qualidade crítica,
+          escrita jurídica e prática forense contemporânea.
+        </p>
+        <div class="quick-links" aria-label="Acessos principais">
+          <a href="comece-por-aqui/">Comece por aqui</a>
+          <a href="ia-forense/">IA Forense</a>
+          <a href="escrita-juridica/">Escrita Jurídica</a>
+          <a href="laboratorio-forense/">Laboratório Forense</a>
+          <a href="vocabulario/">Vocabulário</a>
+          <a href="biblioteca/">Biblioteca</a>
+          <a href="reflexoes/">Reflexões</a>
+          <a href="sobre/">Sobre</a>
         </div>
       </div>
-      <div
-        class="hero-visual"
-        aria-label="Ilustração jurídica e tecnológica"
-        style="max-width: 260px; width: min(100%, 260px); margin-left: auto;"
-      >
+
+      <div class="hero-visual" aria-label="Mockup de painel jurídico-tecnológico">
         <svg
           class="hero-illustration"
-          width="260"
-          height="179"
-          viewBox="0 0 900 620"
+          width="430"
+          height="300"
+          viewBox="0 0 860 600"
           role="img"
-          aria-label="Balança da justiça integrada com elementos tecnológicos"
+          aria-label="Painel fictício com documentos, filtros e análise jurídica"
           xmlns="http://www.w3.org/2000/svg"
-          style="display:block; width:100%; height:auto;"
         >
           <defs>
-            <linearGradient id="bg" x1="0" y1="0" x2="900" y2="620" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#F4F9FF"/>
-              <stop offset="1" stop-color="#E8F1FC"/>
+            <linearGradient id="panelBg" x1="0" y1="0" x2="860" y2="600" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#10213A"/>
+              <stop offset="1" stop-color="#1E3656"/>
             </linearGradient>
-            <linearGradient id="blue" x1="180" y1="115" x2="720" y2="520" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#1E87EF"/>
-              <stop offset="1" stop-color="#0A4B9B"/>
+            <linearGradient id="panelCard" x1="90" y1="110" x2="760" y2="510" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#17304D"/>
+              <stop offset="1" stop-color="#0E1D32"/>
             </linearGradient>
-            <linearGradient id="gold" x1="270" y1="260" x2="625" y2="495" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#D5A451"/>
-              <stop offset="1" stop-color="#B27B2A"/>
+            <linearGradient id="accentLine" x1="112" y1="132" x2="780" y2="460" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#8AE7F7"/>
+              <stop offset="1" stop-color="#A18BFF"/>
             </linearGradient>
           </defs>
-          <rect width="900" height="620" rx="28" fill="url(#bg)"/>
-          <g opacity="0.35" stroke="#9AB8DB" stroke-width="2">
-            <path d="M70 115H240V285"/>
-            <circle cx="70" cy="115" r="6" fill="#9AB8DB"/>
-            <circle cx="240" cy="285" r="6" fill="#9AB8DB"/>
-            <path d="M830 115H660V285"/>
-            <circle cx="830" cy="115" r="6" fill="#9AB8DB"/>
-            <circle cx="660" cy="285" r="6" fill="#9AB8DB"/>
+
+          <rect width="860" height="600" rx="36" fill="url(#panelBg)"/>
+          <g opacity="0.22" stroke="#A7E7F8" stroke-width="1">
+            <path d="M60 96H800"/>
+            <path d="M60 184H800"/>
+            <path d="M60 272H800"/>
+            <path d="M60 360H800"/>
+            <path d="M60 448H800"/>
+            <path d="M162 58V538"/>
+            <path d="M304 58V538"/>
+            <path d="M446 58V538"/>
+            <path d="M588 58V538"/>
+            <path d="M730 58V538"/>
           </g>
-          <rect x="370" y="170" width="160" height="265" rx="18" fill="url(#blue)"/>
-          <rect x="355" y="145" width="190" height="38" rx="10" fill="#1A6FC5"/>
-          <rect x="325" y="430" width="250" height="28" rx="10" fill="#D2E2F5"/>
-          <rect x="285" y="460" width="330" height="24" rx="8" fill="#C1D4EC"/>
-          <rect x="235" y="490" width="430" height="20" rx="7" fill="#AFC5E2"/>
-          <rect x="210" y="250" width="140" height="16" rx="8" fill="#1A6FC5"/>
-          <rect x="550" y="250" width="140" height="16" rx="8" fill="#1A6FC5"/>
-          <path d="M280 266L222 350H338L280 266Z" fill="url(#gold)"/>
-          <path d="M620 266L562 350H678L620 266Z" fill="url(#gold)"/>
+
+          <rect x="74" y="72" width="712" height="456" rx="30" fill="url(#panelCard)" stroke="#5B7897" stroke-width="2"/>
+          <rect x="74" y="72" width="712" height="58" rx="30" fill="#1C3554"/>
+          <rect x="104" y="94" width="124" height="13" rx="6.5" fill="#C7F2FF"/>
+          <rect x="248" y="94" width="70" height="13" rx="6.5" fill="#536A88"/>
+          <rect x="340" y="94" width="92" height="13" rx="6.5" fill="#536A88"/>
+          <rect x="650" y="91" width="92" height="20" rx="10" fill="#244765" stroke="#8AE7F7" stroke-width="1.5"/>
+
+          <rect x="104" y="162" width="154" height="316" rx="22" fill="#10233A" stroke="#46627F" stroke-width="2"/>
+          <rect x="126" y="190" width="84" height="12" rx="6" fill="#8AE7F7"/>
+          <rect x="126" y="230" width="94" height="10" rx="5" fill="#5B708C"/>
+          <rect x="126" y="262" width="70" height="10" rx="5" fill="#5B708C"/>
+          <rect x="126" y="294" width="108" height="10" rx="5" fill="#5B708C"/>
+          <rect x="126" y="348" width="86" height="24" rx="12" fill="#1A3652"/>
+          <rect x="126" y="386" width="104" height="24" rx="12" fill="#1A3652"/>
+          <rect x="126" y="424" width="72" height="24" rx="12" fill="#1A3652"/>
+
+          <rect x="288" y="162" width="304" height="154" rx="22" fill="#10233A" stroke="#46627F" stroke-width="2"/>
+          <rect x="316" y="190" width="128" height="14" rx="7" fill="#E2EEF8"/>
+          <rect x="316" y="226" width="218" height="9" rx="4.5" fill="#657892"/>
+          <rect x="316" y="252" width="178" height="9" rx="4.5" fill="#657892"/>
+          <rect x="316" y="278" width="238" height="9" rx="4.5" fill="#465B78"/>
+          <path d="M535 194L558 217L535 240" fill="none" stroke="url(#accentLine)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <rect x="616" y="162" width="126" height="154" rx="22" fill="#10233A" stroke="#46627F" stroke-width="2"/>
+          <circle cx="679" cy="224" r="40" fill="#183554" stroke="#8AE7F7" stroke-width="2"/>
+          <path d="M661 229L675 242L700 204" fill="none" stroke="#C7F2FF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="647" y="282" width="64" height="10" rx="5" fill="#657892"/>
+
+          <rect x="288" y="340" width="454" height="138" rx="22" fill="#10233A" stroke="#46627F" stroke-width="2"/>
+          <rect x="318" y="368" width="86" height="12" rx="6" fill="#8AE7F7"/>
+          <rect x="318" y="402" width="362" height="8" rx="4" fill="#657892"/>
+          <rect x="318" y="426" width="286" height="8" rx="4" fill="#536A88"/>
+          <rect x="318" y="450" width="332" height="8" rx="4" fill="#3E536F"/>
+          <circle cx="690" cy="378" r="14" fill="#8C6CF7"/>
+          <circle cx="650" cy="378" r="14" fill="#55CDE9"/>
+          <path d="M650 378H690" stroke="#C7F2FF" stroke-width="4" stroke-linecap="round"/>
+          <path d="M704 414H724V434" fill="none" stroke="#8AE7F7" stroke-width="4" stroke-linecap="round"/>
         </svg>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>Seções principais</h2>
-    <div class="grid">
+  <section class="sections-overview">
+    <p class="section-kicker">Destaques do site</p>
+    <h2>Por onde começar</h2>
+    <div class="grid editorial-grid">
+      <article class="card">
+        <h3>Comece por aqui</h3>
+        <p>Guia rápido para escolher sua trilha conforme o perfil e o objetivo de estudo.</p>
+        <a href="comece-por-aqui/">Entrar</a>
+      </article>
       <article class="card">
         <h3>IA Forense</h3>
-        <p>Guias, tutoriais, noções de código, fundamentos práticos de inteligência artificial e vocabulário tecnológico da prática forense para a rotina jurídica.</p>
-        <a href="ia-forense/">Entrar</a>
+        <p>Ferramentas, método, prompts, verificação e cautelas para uso prático no Direito.</p>
+        <a href="ia-forense/">Explorar</a>
       </article>
       <article class="card">
-        <h3>Processo e Tecnologia</h3>
-        <p>Conteúdo voltado à prática forense, com foco no uso de recursos tecnológicos para pesquisa, organização, revisão e elaboração de peças e estratégias processuais.</p>
-        <a href="processo-civil/">Entrar</a>
+        <h3>Primeiro fluxo de IA em petição</h3>
+        <p>Um roteiro inicial para usar IA com método, revisão crítica e controle das fontes.</p>
+        <a href="ia-forense/primeiro-fluxo-ia-peticao/">Ler artigo</a>
       </article>
       <article class="card">
-        <h3>Reflexões</h3>
-        <p>Análises sobre riscos, limites, confiabilidade e impactos da inteligência artificial na prática do Direito.</p>
-        <a href="opiniao/">Entrar</a>
+        <h3>Vocabulário tecnológico</h3>
+        <p>Glossário tecnológico-jurídico para aprender os termos essenciais sem ruído.</p>
+        <a href="vocabulario/">Consultar</a>
       </article>
       <article class="card">
         <h3>Biblioteca</h3>
-        <p>“Vídeos, artigos, ferramentas, documentos e referências para estudo e aplicação prática da IA no campo jurídico.”</p>
-        <a href="biblioteca/">Entrar</a>
+        <p>Vídeos, normas, documentos públicos, referências e materiais recomendados.</p>
+        <a href="biblioteca/">Ver curadoria</a>
+      </article>
+      <article class="card">
+        <h3>Reflexão em evidência</h3>
+        <p>Ética, regulação, responsabilidade profissional e limites da IA na prática forense.</p>
+        <a href="reflexoes/">Abrir reflexões</a>
       </article>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .feature-grid {
-    display: grid;
-    gap: 0.9rem;
-    margin-top: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  .hero-copy {
+    min-width: 0;
   }
-  .feature-card {
-    padding: 0.95rem;
-    border-color: #79a8da;
-    background: linear-gradient(165deg, #f9fcff, #d4e5fa);
-    box-shadow: 0 14px 26px #4f77a932;
+  .author-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.72rem 0 0.82rem;
+    color: #d2dfef;
+    font-size: 0.84rem;
   }
-  .feature-card h3 {
-    margin-top: 0.3rem;
-    font-size: 1.14rem;
+  .author-line strong {
+    color: #edf6ff;
+    font-weight: 720;
   }
-  .feature-card .tag {
-    background: #d9ebff;
-    border-color: #93bbe8;
-    color: #0a4b9b;
-  }
-  .feature-card a {
-    display: inline-block;
-    margin-top: 0.25rem;
+  .author-line a {
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 999px;
+    padding: 0.22rem 0.52rem;
+    background: rgba(255,255,255,0.055);
+    color: #d6f6ff;
+    font-size: 0.75rem;
     font-weight: 700;
+    text-decoration: none;
+  }
+  .author-line a:hover {
+    border-color: rgba(85,205,233,0.5);
+    background: rgba(85,205,233,0.12);
+  }
+  .lead {
+    max-width: 760px;
+    margin: 0 0 1rem;
+    color: #e0ebf7;
+    font-size: clamp(0.98rem, 1.22vw, 1.08rem);
+    line-height: 1.55;
+  }
+  .quick-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.42rem;
+    margin-top: 0.78rem;
+  }
+  .quick-links a {
+    min-height: 1.88rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.072), rgba(255,255,255,0.04));
+    color: #ecfbff;
+    font-size: 0.72rem;
+    font-weight: 720;
+    line-height: 1.12;
+    text-decoration: none;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 18px rgba(0,0,0,0.12);
+  }
+  .quick-links a:hover {
+    border-color: rgba(85,205,233,0.58);
+    background: linear-gradient(180deg, rgba(85,205,233,0.15), rgba(85,205,233,0.08));
+    transform: translateY(-1px);
+  }
+  .hero-visual {
+    width: min(100%, 440px);
+    justify-self: end;
+  }
+  .hero-visual svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .sections-overview {
+    margin-top: 1.1rem;
+  }
+  .section-kicker {
+    margin: 0 0 0.25rem;
+    color: #9ee9f7;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  .sections-overview h2 {
+    margin: 0 0 0.72rem;
+    color: #f8fafc;
+    font-size: clamp(1.15rem, 1.7vw, 1.55rem);
+    letter-spacing: -0.02em;
+  }
+  .editorial-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .sections-overview :global(.card) {
+    min-height: 9.2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .sections-overview :global(.card h3) {
+    margin: 0 0 0.36rem;
+    font-size: 0.96rem;
+    letter-spacing: -0.01em;
+  }
+  .sections-overview :global(.card p) {
+    display: -webkit-box;
+    margin: 0 0 0.7rem;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 0.8rem;
+    line-height: 1.42;
+  }
+  .sections-overview :global(.card a) {
+    margin-top: auto;
+    color: #d6f6ff;
+    font-size: 0.78rem;
+    font-weight: 760;
+    text-decoration: none;
+    width: fit-content;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 999px;
+    padding: 0.22rem 0.52rem;
+    background: rgba(255,255,255,0.045);
+  }
+  .sections-overview :global(.card a:hover) {
+    border-color: rgba(85,205,233,0.5);
+    background: rgba(85,205,233,0.12);
+  }
+  @media (max-width: 980px) {
+    .quick-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .editorial-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 560px) {
+    .quick-links,
+    .editorial-grid { grid-template-columns: 1fr; }
+    .quick-links a { min-height: 2.15rem; }
   }
 </style>
